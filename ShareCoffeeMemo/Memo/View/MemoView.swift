@@ -69,6 +69,7 @@ struct MemoView: View {
 
 struct MemoView_Previews: PreviewProvider {
     static var previews: some View {
-        MemoView()
-    }
+       let memo = MemoModel()
+       MemoView(memo: memo)
+   }
 }
