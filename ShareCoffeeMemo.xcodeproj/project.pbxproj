@@ -23,6 +23,9 @@
 		6A46C34527270CC3002A0856 /* WriteMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34427270CC3002A0856 /* WriteMemoViewModel.swift */; };
 		6A46C34727270CEA002A0856 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34627270CEA002A0856 /* StarView.swift */; };
 		6A46C34927270D23002A0856 /* WriteMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34827270D23002A0856 /* WriteMemoView.swift */; };
+		6A46C34C27270DB9002A0856 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34B27270DB9002A0856 /* Information.swift */; };
+		6A46C34E27270DDF002A0856 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34D27270DDF002A0856 /* PrivacyPolicy.swift */; };
+		6A46C35027270E16002A0856 /* Inquiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34F27270E16002A0856 /* Inquiry.swift */; };
 		D7E45485CD062D196CE96286 /* Pods_ShareCoffeeMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B517EE622D9B4C142CCBE4BF /* Pods_ShareCoffeeMemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		6A46C34427270CC3002A0856 /* WriteMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoViewModel.swift; sourceTree = "<group>"; };
 		6A46C34627270CEA002A0856 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		6A46C34827270D23002A0856 /* WriteMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoView.swift; sourceTree = "<group>"; };
+		6A46C34B27270DB9002A0856 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		6A46C34D27270DDF002A0856 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		6A46C34F27270E16002A0856 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
 		B517EE622D9B4C142CCBE4BF /* Pods_ShareCoffeeMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareCoffeeMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED353F30D1BCFD2CABEAE95 /* Pods-ShareCoffeeMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCoffeeMemo.debug.xcconfig"; path = "Target Support Files/Pods-ShareCoffeeMemo/Pods-ShareCoffeeMemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +102,7 @@
 				6A361E722727084A00415DB1 /* Memo */,
 				6A46C33827270B3F002A0856 /* DeteilMemo */,
 				6A46C33F27270C3F002A0856 /* WriteMemo */,
+				6A46C34A27270D89002A0856 /* Information */,
 				6A2B8A932727054D00905667 /* Assets.xcassets */,
 				6A2B8A952727054D00905667 /* Preview Content */,
 			);
@@ -197,6 +204,16 @@
 				6A46C34827270D23002A0856 /* WriteMemoView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6A46C34A27270D89002A0856 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				6A46C34B27270DB9002A0856 /* Information.swift */,
+				6A46C34D27270DDF002A0856 /* PrivacyPolicy.swift */,
+				6A46C34F27270E16002A0856 /* Inquiry.swift */,
+			);
+			path = Information;
 			sourceTree = "<group>";
 		};
 		A7AE73B658C748D19DE95B26 /* Frameworks */ = {
@@ -324,14 +341,17 @@
 				6A46C34527270CC3002A0856 /* WriteMemoViewModel.swift in Sources */,
 				6A46C33C27270BA3002A0856 /* DeteilMemoView.swift in Sources */,
 				6A46C34727270CEA002A0856 /* StarView.swift in Sources */,
+				6A46C34C27270DB9002A0856 /* Information.swift in Sources */,
 				6A46C33E27270BF3002A0856 /* DeteilMemoViewModel.swift in Sources */,
 				6A46C33527270A7F002A0856 /* MemoView.swift in Sources */,
 				6A46C34327270C9B002A0856 /* StarViewModel.swift in Sources */,
 				6A2B8A922727054A00905667 /* ContentView.swift in Sources */,
+				6A46C35027270E16002A0856 /* Inquiry.swift in Sources */,
 				6A46C33727270ADC002A0856 /* MemoListView.swift in Sources */,
 				6A46C34927270D23002A0856 /* WriteMemoView.swift in Sources */,
 				6A2B8A902727054A00905667 /* ShareCoffeeMemoApp.swift in Sources */,
 				6A46C33327270A52002A0856 /* MemoListViewModel.swift in Sources */,
+				6A46C34E27270DDF002A0856 /* PrivacyPolicy.swift in Sources */,
 				6A46C33127270A1B002A0856 /* MemoViewModel.swift in Sources */,
 				6A46C32D2727098B002A0856 /* MomoListModel.swift in Sources */,
 				6A46C32F272709C3002A0856 /* MomoModel.swift in Sources */,
