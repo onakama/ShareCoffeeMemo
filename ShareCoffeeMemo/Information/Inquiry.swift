@@ -14,8 +14,7 @@ struct Inquiry: View {
                 Text("お問い合わせ")
                 .font(.title)
                 .padding()
-                Text(" 不具合・ご意見ございましたらご連絡頂けますと幸いです。")
-                    .padding()
+
                 Text("1.Mail")
                 Text(" 　メールはonakama.dev@gmail.com")
                 Text("2.Twitter")
