@@ -9,7 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        MemoListView()
+        TabView{
+            MemoListView()
+                .tabItem {
+                    Image(systemName: "1.circle.fill")
+                }
+            MemoListView()
+                .tabItem {
+                    Image(systemName: "2.circle.fill")
+                }
+        }
     }
 }
 

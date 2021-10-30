@@ -8,6 +8,11 @@
 import Foundation
 import RealmSwift
 
+struct ResponceMemos: Decodable {
+    let statusCode: Int
+    let memos: [MemoModel]
+}
+
 protocol MemoProtocol {
     var id: Int { set get }
     var name: String { set get }
@@ -18,7 +23,7 @@ protocol MemoProtocol {
     var date: Date { set get }
 }
 
-class MemoModel: Object, MemoProtocol, Identifiable {
+class MemoModel: Object, MemoProtocol, Identifiable, Decodable {
     @objc dynamic var id: Int = 0
     @objc dynamic var name: String = ""
     @objc dynamic var saler: String = ""
@@ -32,3 +37,38 @@ class MemoModel: Object, MemoProtocol, Identifiable {
         return "id"
     }
 }
+
+let jsonStr = """
+    {"statusCode": 200,
+    "memos": [{
+            "id": 0,
+            "name": "aaaaa",
+            "saler": "aaaaa",
+            "astringency": 0,
+            "taste": 0,
+            "roast": 0,
+            "review": "aaaaa",
+            "date": "2020-07-23T03:53:51Z"
+        },
+        {
+            "id": 2,
+            "name": "bbbbbb",
+            "saler": "aaaaa",
+            "astringency": 0,
+            "taste": 0,
+            "roast": 0,
+            "review": "aaaaa",
+            "date": "2020-07-23T03:53:51Z"
+        },
+        {
+            "id": 3,
+            "name": "cccccc",
+            "saler": "aaaaa",
+            "astringency": 0,
+            "taste": 0,
+            "roast": 0,
+            "review": "aaaaa",
+            "date": "2020-07-23T03:53:51Z"
+        }]}
+"""
+
