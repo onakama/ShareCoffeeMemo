@@ -24,7 +24,6 @@
 		6A46C33E27270BF3002A0856 /* DeteilMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C33D27270BF3002A0856 /* DeteilMemoViewModel.swift */; };
 		6A46C34327270C9B002A0856 /* StarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34227270C9B002A0856 /* StarViewModel.swift */; };
 		6A46C34527270CC3002A0856 /* WriteMemoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34427270CC3002A0856 /* WriteMemoViewModel.swift */; };
-		6A46C34727270CEA002A0856 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34627270CEA002A0856 /* StarView.swift */; };
 		6A46C34927270D23002A0856 /* WriteMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34827270D23002A0856 /* WriteMemoView.swift */; };
 		6A46C34C27270DB9002A0856 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34B27270DB9002A0856 /* Information.swift */; };
 		6A46C34E27270DDF002A0856 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34D27270DDF002A0856 /* PrivacyPolicy.swift */; };
@@ -52,7 +51,6 @@
 		6A46C33D27270BF3002A0856 /* DeteilMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteilMemoViewModel.swift; sourceTree = "<group>"; };
 		6A46C34227270C9B002A0856 /* StarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarViewModel.swift; sourceTree = "<group>"; };
 		6A46C34427270CC3002A0856 /* WriteMemoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoViewModel.swift; sourceTree = "<group>"; };
-		6A46C34627270CEA002A0856 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		6A46C34827270D23002A0856 /* WriteMemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoView.swift; sourceTree = "<group>"; };
 		6A46C34B27270DB9002A0856 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		6A46C34D27270DDF002A0856 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 		6A46C34127270C6B002A0856 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6A46C34627270CEA002A0856 /* StarView.swift */,
 				6A46C34827270D23002A0856 /* WriteMemoView.swift */,
 			);
 			path = View;
@@ -352,7 +349,6 @@
 			files = (
 				6A46C34527270CC3002A0856 /* WriteMemoViewModel.swift in Sources */,
 				6A46C33C27270BA3002A0856 /* DeteilMemoView.swift in Sources */,
-				6A46C34727270CEA002A0856 /* StarView.swift in Sources */,
 				6A46C34C27270DB9002A0856 /* Information.swift in Sources */,
 				6A46C33E27270BF3002A0856 /* DeteilMemoViewModel.swift in Sources */,
 				6A46C33527270A7F002A0856 /* MemoView.swift in Sources */,
