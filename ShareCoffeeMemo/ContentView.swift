@@ -12,11 +12,11 @@ struct ContentView: View {
         TabView{
             MemoListView()
                 .tabItem {
-                    Image(systemName: "1.circle.fill")
+                    Image(systemName: "person.fill")
                 }
-            MemoListView()
+            PubMemoListView()
                 .tabItem {
-                    Image(systemName: "2.circle.fill")
+                    Image(systemName: "person.3.fill")
                 }
         }
     }

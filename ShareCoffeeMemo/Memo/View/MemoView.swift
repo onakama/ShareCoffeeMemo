@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MemoView: View {
     var viewModel: MemoViewModel
-    init(memo: MemoModel){
+    init(memo: MemoProtocol){
         self.viewModel = MemoViewModel(memo: memo)
     }
     var body: some View {
@@ -30,7 +30,7 @@ struct MemoView: View {
             HStack{
                 Text("酸")
                     .foregroundColor(Color("TextColor"))
-                Text(viewModel.setStar(viewModel.memo.astringency))
+                Text(viewModel.setStar(viewModel.memo.taste))
                     .foregroundColor(Color.yellow)
                 Text("苦")
                     .foregroundColor(Color("TextColor"))
@@ -40,7 +40,7 @@ struct MemoView: View {
             HStack{
                 Text("軽")
                     .foregroundColor(Color("TextColor"))
-                Text(viewModel.setStar(viewModel.memo.taste))
+                Text(viewModel.setStar(viewModel.memo.body))
                     .foregroundColor(Color.yellow)
                 Text("重")
                     .foregroundColor(Color("TextColor"))

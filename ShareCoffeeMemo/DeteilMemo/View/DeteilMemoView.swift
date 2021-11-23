@@ -10,8 +10,8 @@ import RealmSwift
 
 struct DeteilMemoView: View {
     @ObservedObject var viewModel: DeteilMemoViewModel
-    init(memo: MemoModel) {
-        self.viewModel = DeteilMemoViewModel(memo: memo)
+    init(memo: MemoProtocol, localFlg: Bool) {
+        self.viewModel = DeteilMemoViewModel(memo: memo, localFlg: localFlg)
     }
     var body: some View {
         VStack {
@@ -55,6 +55,6 @@ struct DeteilMemoView: View {
 struct DeteilMemoView_Previews: PreviewProvider {
     static var previews: some View {
         let memo = MemoModel()
-        DeteilMemoView(memo: memo)
+        DeteilMemoView(memo: memo, localFlg: true)
     }
 }

@@ -16,15 +16,15 @@ struct PubMemoListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(searchResults.reversed()) { MemoModel in
-                    NavigationLink(destination: DeteilMemoView(memo: MemoModel).onDisappear(perform: {
+                ForEach(viewModel.memoList.indices, id: \.self) { index in
+                    NavigationLink(destination: DeteilMemoView(memo: viewModel.memoList[index], localFlg: false).onDisappear(perform: {
                         viewModel.set()
                     })) {
-                        MemoView(memo: MemoModel)
+                        MemoView(memo: viewModel.memoList[index])
                     }
                 }
             }
-            .searchable(text: $searchTextEntered)
+            
             .navigationTitle("Coffee Book")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -53,13 +53,7 @@ struct PubMemoListView: View {
             WriteMemoView()
         }
     }
-    var searchResults: [MemoModel] {
-            if searchTextEntered.isEmpty {
-                return viewModel.memoList
-            } else {
-                return viewModel.memoList.filter { $0.name.contains(searchTextEntered) }
-            }
-        }
+
 }
 
 struct PubMemoListView_Previews: PreviewProvider {

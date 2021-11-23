@@ -11,10 +11,10 @@ import RealmSwift
 class MemoListModel {
     private var memoList: [MemoModel] = []
     static let shared = MemoListModel()
-    let realm = try! Realm()
+    let realm: Realm
     var realmCount = 0
     private init(){
-        //allDelete()
+        realm = try! Realm()
     }
     func get() -> [MemoModel] {
         let memo1 = realm.objects(MemoModel.self)

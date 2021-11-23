@@ -9,15 +9,8 @@ import Foundation
 
 class MemoListViewModel: ObservableObject {
     @Published var memoList: [MemoModel] = []
-    init(){
+    init() {
         set()
-    }
-    func setStar(StarInt: Int) -> String{
-        var stars: [String] = ["☆","☆","☆","☆","☆"]
-        for i in 0 ..< StarInt{
-            stars[i] = "★"
-        }
-        return stars.joined()
     }
     func set() {
         self.memoList = MemoListModel.shared.get()

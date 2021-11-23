@@ -8,8 +8,8 @@
 import Foundation
 
 class MemoViewModel {
-    var memo: MemoModel
-    init(memo: MemoModel){
+    var memo: MemoProtocol
+    init(memo: MemoProtocol){
         self.memo = memo
     }
     func setStar(_ StarInt: Int) -> String{

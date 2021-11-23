@@ -12,8 +12,8 @@ struct WriteMemoView: View {
     @State  var coffeeName = ""
     @State var coffeeReview = ""
     @StateObject var viewModel = WriteMemoViewModel()
-    @StateObject var astViewModel: StarViewModel = StarViewModel()
     @StateObject var tasteViewModel: StarViewModel = StarViewModel()
+    @StateObject var bodyViewModel: StarViewModel = StarViewModel()
     @StateObject var roastViewModel: StarViewModel = StarViewModel()
     @FocusState var isCoffeeNameFocused: Bool
     var body: some View {
@@ -21,7 +21,7 @@ struct WriteMemoView: View {
             HStack{
                 Spacer()
                 Button(action: {
-                    viewModel.makeMemo(ast: astViewModel.get(), taste: tasteViewModel.get(), roast: roastViewModel.get())
+                    viewModel.makeMemo(taste: tasteViewModel.get(), body: tasteViewModel.get(), roast: roastViewModel.get())
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("+")
@@ -41,17 +41,18 @@ struct WriteMemoView: View {
             TextField("  Store", text: $viewModel.saler)
                 .font(.title)
                 .padding(.leading)
-                .focused($isCoffeeNameFocused)
+                //.focused($isCoffeeNameFocused)
+                .keyboardType(.default)
             Divider()
                 .background(Color("TextFrame"))
             Group{
                 HStack{
                     Text("酸")
-                    ForEach(0 ..< $astViewModel.stars.count, id: \.self) { starIndex in
+                    ForEach(0 ..< $tasteViewModel.stars.count, id: \.self) { starIndex in
                         Button(action: {
-                            astViewModel.tap(starIndex: starIndex)
+                            tasteViewModel.tap(starIndex: starIndex)
                         }) {
-                            Text(astViewModel.stars[starIndex] ? "★": "☆")
+                            Text(tasteViewModel.stars[starIndex] ? "★": "☆")
                         }
                     }
                     .font(.title)
@@ -63,11 +64,11 @@ struct WriteMemoView: View {
             Group{
                 HStack{
                 Text("軽")
-                    ForEach(0 ..< $tasteViewModel.stars.count, id: \.self) { starIndex in
+                    ForEach(0 ..< $bodyViewModel.stars.count, id: \.self) { starIndex in
                     Button(action: {
-                        tasteViewModel.tap(starIndex: starIndex)
+                        bodyViewModel.tap(starIndex: starIndex)
                     }) {
-                        Text(tasteViewModel.stars[starIndex] ? "★": "☆")
+                        Text(bodyViewModel.stars[starIndex] ? "★": "☆")
                     }
                 }
                 .font(.title)

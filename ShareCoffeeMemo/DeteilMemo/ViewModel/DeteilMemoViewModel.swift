@@ -8,16 +8,20 @@
 import Foundation
 
 class DeteilMemoViewModel: ObservableObject {
-    var memo: MemoModel
+    var memo: MemoProtocol
     @Published var review: String
     @Published var oldReview: String
-    init(memo: MemoModel) {
+    let localMemoFlg: Bool
+    init(memo: MemoProtocol, localFlg: Bool) {
         self.memo = memo
         self.review = memo.review
         self.oldReview = memo.review
+        self.localMemoFlg = localFlg
     }
     func updateReview() {
-        MemoListModel.shared.updateReview(id: memo.id, review: review)
-        oldReview = review
+        if localMemoFlg == true {
+            MemoListModel.shared.updateReview(id: memo.id, review: review)
+            oldReview = review
+        }
     }
 }

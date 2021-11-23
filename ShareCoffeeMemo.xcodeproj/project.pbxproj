@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C28EA96274A132400CFB6F3 /* CoffeeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C28EA95274A132400CFB6F3 /* CoffeeError.swift */; };
 		6A1DA75B272CD37600E19608 /* PubMemoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DA75A272CD37600E19608 /* PubMemoListModel.swift */; };
 		6A1DA75D272CD7FC00E19608 /* PubMemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DA75C272CD7FC00E19608 /* PubMemoListViewModel.swift */; };
 		6A2B8A902727054A00905667 /* ShareCoffeeMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2B8A8F2727054A00905667 /* ShareCoffeeMemoApp.swift */; };
@@ -29,11 +30,11 @@
 		6A46C34E27270DDF002A0856 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34D27270DDF002A0856 /* PrivacyPolicy.swift */; };
 		6A46C35027270E16002A0856 /* Inquiry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A46C34F27270E16002A0856 /* Inquiry.swift */; };
 		6A52416B272CDFB700D67B44 /* PubMemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A52416A272CDFB700D67B44 /* PubMemoListView.swift */; };
-		D7E45485CD062D196CE96286 /* Pods_ShareCoffeeMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B517EE622D9B4C142CCBE4BF /* Pods_ShareCoffeeMemo.framework */; };
+		9D5E905A789DFCF6174F565C /* Pods_ShareCoffeeMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1720B06CDBEB7A426F085D /* Pods_ShareCoffeeMemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13FB0B6716D5F5EA7AB0A94F /* Pods-ShareCoffeeMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCoffeeMemo.release.xcconfig"; path = "Target Support Files/Pods-ShareCoffeeMemo/Pods-ShareCoffeeMemo.release.xcconfig"; sourceTree = "<group>"; };
+		5C28EA95274A132400CFB6F3 /* CoffeeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeError.swift; sourceTree = "<group>"; };
 		6A1DA75A272CD37600E19608 /* PubMemoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubMemoListModel.swift; sourceTree = "<group>"; };
 		6A1DA75C272CD7FC00E19608 /* PubMemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubMemoListViewModel.swift; sourceTree = "<group>"; };
 		6A2B8A8C2727054A00905667 /* ShareCoffeeMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCoffeeMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,8 +58,9 @@
 		6A46C34D27270DDF002A0856 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
 		6A46C34F27270E16002A0856 /* Inquiry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inquiry.swift; sourceTree = "<group>"; };
 		6A52416A272CDFB700D67B44 /* PubMemoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubMemoListView.swift; sourceTree = "<group>"; };
-		B517EE622D9B4C142CCBE4BF /* Pods_ShareCoffeeMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareCoffeeMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EED353F30D1BCFD2CABEAE95 /* Pods-ShareCoffeeMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCoffeeMemo.debug.xcconfig"; path = "Target Support Files/Pods-ShareCoffeeMemo/Pods-ShareCoffeeMemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6C9622CDB8117B0B2140862B /* Pods-ShareCoffeeMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCoffeeMemo.release.xcconfig"; path = "Target Support Files/Pods-ShareCoffeeMemo/Pods-ShareCoffeeMemo.release.xcconfig"; sourceTree = "<group>"; };
+		BAEF4508682E7EF3EDBC2016 /* Pods-ShareCoffeeMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareCoffeeMemo.debug.xcconfig"; path = "Target Support Files/Pods-ShareCoffeeMemo/Pods-ShareCoffeeMemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DD1720B06CDBEB7A426F085D /* Pods_ShareCoffeeMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShareCoffeeMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,18 +68,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7E45485CD062D196CE96286 /* Pods_ShareCoffeeMemo.framework in Frameworks */,
+				9D5E905A789DFCF6174F565C /* Pods_ShareCoffeeMemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03EED46AF92183392E9CA0B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD1720B06CDBEB7A426F085D /* Pods_ShareCoffeeMemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		466B8AF8E4F5E6BC44693B1A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EED353F30D1BCFD2CABEAE95 /* Pods-ShareCoffeeMemo.debug.xcconfig */,
-				13FB0B6716D5F5EA7AB0A94F /* Pods-ShareCoffeeMemo.release.xcconfig */,
+				BAEF4508682E7EF3EDBC2016 /* Pods-ShareCoffeeMemo.debug.xcconfig */,
+				6C9622CDB8117B0B2140862B /* Pods-ShareCoffeeMemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -88,7 +98,7 @@
 				6A2B8A8E2727054A00905667 /* ShareCoffeeMemo */,
 				6A2B8A8D2727054A00905667 /* Products */,
 				466B8AF8E4F5E6BC44693B1A /* Pods */,
-				A7AE73B658C748D19DE95B26 /* Frameworks */,
+				03EED46AF92183392E9CA0B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +119,7 @@
 				6A46C33827270B3F002A0856 /* DeteilMemo */,
 				6A46C33F27270C3F002A0856 /* WriteMemo */,
 				6A46C34A27270D89002A0856 /* Information */,
+				5C28EA95274A132400CFB6F3 /* CoffeeError.swift */,
 				6A2B8A932727054D00905667 /* Assets.xcassets */,
 				6A2B8A952727054D00905667 /* Preview Content */,
 			);
@@ -225,14 +236,6 @@
 			path = Information;
 			sourceTree = "<group>";
 		};
-		A7AE73B658C748D19DE95B26 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B517EE622D9B4C142CCBE4BF /* Pods_ShareCoffeeMemo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,11 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A2B8A9A2727054D00905667 /* Build configuration list for PBXNativeTarget "ShareCoffeeMemo" */;
 			buildPhases = (
-				0E82E66D31C72B5413A73E1B /* [CP] Check Pods Manifest.lock */,
+				3DF92477C868426488129660 /* [CP] Check Pods Manifest.lock */,
 				6A2B8A882727054A00905667 /* Sources */,
 				6A2B8A892727054A00905667 /* Frameworks */,
 				6A2B8A8A2727054A00905667 /* Resources */,
-				B4D898B9BC6C1719F1C7C32B /* [CP] Embed Pods Frameworks */,
+				56DCEBEFCD0443E8BBDABF96 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,7 +304,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E82E66D31C72B5413A73E1B /* [CP] Check Pods Manifest.lock */ = {
+		3DF92477C868426488129660 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,7 +326,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B4D898B9BC6C1719F1C7C32B /* [CP] Embed Pods Frameworks */ = {
+		56DCEBEFCD0443E8BBDABF96 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,6 +364,7 @@
 				6A46C34927270D23002A0856 /* WriteMemoView.swift in Sources */,
 				6A2B8A902727054A00905667 /* ShareCoffeeMemoApp.swift in Sources */,
 				6A46C33327270A52002A0856 /* MemoListViewModel.swift in Sources */,
+				5C28EA96274A132400CFB6F3 /* CoffeeError.swift in Sources */,
 				6A1DA75B272CD37600E19608 /* PubMemoListModel.swift in Sources */,
 				6A46C34E27270DDF002A0856 /* PrivacyPolicy.swift in Sources */,
 				6A52416B272CDFB700D67B44 /* PubMemoListView.swift in Sources */,
@@ -491,7 +495,7 @@
 		};
 		6A2B8A9B2727054D00905667 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EED353F30D1BCFD2CABEAE95 /* Pods-ShareCoffeeMemo.debug.xcconfig */;
+			baseConfigurationReference = BAEF4508682E7EF3EDBC2016 /* Pods-ShareCoffeeMemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -522,7 +526,7 @@
 		};
 		6A2B8A9C2727054D00905667 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13FB0B6716D5F5EA7AB0A94F /* Pods-ShareCoffeeMemo.release.xcconfig */;
+			baseConfigurationReference = 6C9622CDB8117B0B2140862B /* Pods-ShareCoffeeMemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
