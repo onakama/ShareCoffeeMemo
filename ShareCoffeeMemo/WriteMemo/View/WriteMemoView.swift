@@ -9,20 +9,24 @@ import SwiftUI
 
 struct WriteMemoView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State  var coffeeName = ""
-    @State var coffeeReview = ""
     @StateObject var viewModel = WriteMemoViewModel()
     @StateObject var tasteViewModel: StarViewModel = StarViewModel()
     @StateObject var bodyViewModel: StarViewModel = StarViewModel()
     @StateObject var roastViewModel: StarViewModel = StarViewModel()
     @FocusState var isCoffeeNameFocused: Bool
+    @State private var showingNullAlert = false
     var body: some View {
         VStack{
             HStack{
                 Spacer()
                 Button(action: {
-                    viewModel.makeMemo(taste: tasteViewModel.get(), body: tasteViewModel.get(), roast: roastViewModel.get())
-                    self.presentationMode.wrappedValue.dismiss()
+                    if viewModel.coffeeName == "" || viewModel.saler == "" {
+                        showingNullAlert = true
+                        print("空のまま")
+                    } else {
+                        viewModel.makeMemo(taste: tasteViewModel.get(), body: tasteViewModel.get(), roast: roastViewModel.get())
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
                 }) {
                     Text("+")
                         .font(.title)
@@ -41,7 +45,6 @@ struct WriteMemoView: View {
             TextField("  Store", text: $viewModel.saler)
                 .font(.title)
                 .padding(.leading)
-                //.focused($isCoffeeNameFocused)
                 .keyboardType(.default)
             Divider()
                 .background(Color("TextFrame"))
@@ -98,6 +101,9 @@ struct WriteMemoView: View {
                 .border(Color("TextFrame"), width: 0.5)
                 .padding()
                 .foregroundColor(.gray)
+        }
+        .alert(isPresented: $showingNullAlert) {
+            Alert(title: Text("Name,Storeが空です"))
         }
     }
 }

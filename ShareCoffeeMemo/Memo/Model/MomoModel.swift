@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 extension DateFormatter {
-    static let iso8601Shrt: DateFormatter = {
+    static let iso8601Short: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         formatter.calendar = Calendar(identifier: .iso8601)
@@ -35,7 +35,7 @@ protocol MemoProtocol {
     var date: Date { set get }
 }
 
-class MemoModel: Object, MemoProtocol, Identifiable, Decodable {
+class MemoModel: Object, MemoProtocol, Identifiable, Codable {
     @objc dynamic var id: Int = 0
     @objc dynamic var name: String = ""
     @objc dynamic var saler: String = ""
@@ -50,7 +50,7 @@ class MemoModel: Object, MemoProtocol, Identifiable, Decodable {
     }
 }
 
-class PubMemoModel: Decodable, MemoProtocol, Identifiable {
+class PubMemoModel: Codable, MemoProtocol, Identifiable {
     var id: Int = 0
     var name: String = ""
     var saler: String = ""
@@ -59,6 +59,16 @@ class PubMemoModel: Decodable, MemoProtocol, Identifiable {
     var roast: Int = 0
     var review: String = ""
     var date: Date = Date()
+    func PubMemoModel(memo: MemoProtocol) {
+        self.id = memo.id
+        self.name = memo.name
+        self.saler = memo.saler
+        self.taste = memo.taste
+        self.body = memo.body
+        self.roast = memo.roast
+        self.review = memo.review
+        self.date = memo.date
+    }
 }
 
 let jsonStr = """

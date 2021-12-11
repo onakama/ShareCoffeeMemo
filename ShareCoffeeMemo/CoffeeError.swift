@@ -10,4 +10,5 @@ import Foundation
 enum CoffeeError: Error {
     case coffeeAPIError
     case jsonDecodeError
+    case jsonEncodeError
 }

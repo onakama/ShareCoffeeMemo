@@ -14,8 +14,6 @@ class PubMemoListViewModel: ObservableObject {
         set()
     }
     func set() {
-        memoListModel.getForHttps()
-        
         DispatchQueue.global().async {
             let memoModel: PubMemoListModel = PubMemoListModel()
             memoModel.fetch(completion: { result in
@@ -29,9 +27,11 @@ class PubMemoListViewModel: ObservableObject {
         switch result {
         case .success(let response):
             self.memoList = response
-            print(memoList)
+            print(response)
         case .failure(let error):
             print(error)
         }
     }
+    
+    
 }

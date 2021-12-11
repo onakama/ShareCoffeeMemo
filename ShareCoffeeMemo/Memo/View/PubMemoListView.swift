@@ -24,7 +24,10 @@ struct PubMemoListView: View {
                     }
                 }
             }
-            
+            .refreshable {
+                viewModel.set()
+                print("refresh")
+            }
             .navigationTitle("Coffee Book")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
