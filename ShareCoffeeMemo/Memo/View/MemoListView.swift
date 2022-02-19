@@ -12,7 +12,7 @@ struct MemoListView: View {
     @State private var showingWriteMemo = false
     @State var searchTextEntered: String = ""
     @StateObject var viewModel = MemoListViewModel()
-    @State var isInformation = false
+    @State var isInfomation = false
     var body: some View {
         NavigationView {
             List {
@@ -38,7 +38,7 @@ struct MemoListView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination: Information(), isActive: $isInformation) {
+                    NavigationLink(destination: Information(), isActive: $isInfomation) {
                         Image("gear")
                             .resizable()
                             .frame(width: 25, height: 25)

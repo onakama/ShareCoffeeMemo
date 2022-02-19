@@ -90,6 +90,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5C05B96D27B8CAA9007D637D /* PubMemo */ = {
+			isa = PBXGroup;
+			children = (
+				6A52416A272CDFB700D67B44 /* PubMemoListView.swift */,
+				6A1DA75C272CD7FC00E19608 /* PubMemoListViewModel.swift */,
+				6A1DA75A272CD37600E19608 /* PubMemoListModel.swift */,
+			);
+			path = PubMemo;
+			sourceTree = "<group>";
+		};
 		6A2B8A832727054A00905667 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 				6A2B8A8F2727054A00905667 /* ShareCoffeeMemoApp.swift */,
 				6A2B8A912727054A00905667 /* ContentView.swift */,
 				6A361E722727084A00415DB1 /* Memo */,
+				5C05B96D27B8CAA9007D637D /* PubMemo */,
 				6A46C33827270B3F002A0856 /* DeteilMemo */,
 				6A46C33F27270C3F002A0856 /* WriteMemo */,
 				6A46C34A27270D89002A0856 /* Information */,
@@ -146,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				6A46C33227270A52002A0856 /* MemoListViewModel.swift */,
-				6A1DA75C272CD7FC00E19608 /* PubMemoListViewModel.swift */,
 				6A46C33027270A1B002A0856 /* MemoViewModel.swift */,
 			);
 			path = ViewModel;
@@ -157,7 +167,6 @@
 			children = (
 				6A46C33427270A7F002A0856 /* MemoView.swift */,
 				6A46C33627270ADC002A0856 /* MemoListView.swift */,
-				6A52416A272CDFB700D67B44 /* PubMemoListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				6A46C32C2727098B002A0856 /* MomoListModel.swift */,
-				6A1DA75A272CD37600E19608 /* PubMemoListModel.swift */,
 				6A46C32E272709C3002A0856 /* MomoModel.swift */,
 			);
 			path = Model;

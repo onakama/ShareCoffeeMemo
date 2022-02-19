@@ -18,14 +18,14 @@ struct PubMemoListView: View {
             List {
                 ForEach(viewModel.memoList.indices, id: \.self) { index in
                     NavigationLink(destination: DeteilMemoView(memo: viewModel.memoList[index], localFlg: false).onDisappear(perform: {
-                        viewModel.set()
+                        setMemo()
                     })) {
                         MemoView(memo: viewModel.memoList[index])
                     }
                 }
             }
             .refreshable {
-                viewModel.set()
+                setMemo()
                 print("refresh")
             }
             .navigationTitle("Coffee Book")
@@ -51,12 +51,21 @@ struct PubMemoListView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .sheet(isPresented: $showingWriteMemo, onDismiss: {
-            viewModel.set()
+            setMemo()
         }) {
             WriteMemoView()
         }
+        .onAppear() { setMemo() }
     }
-
+    func setMemo() {
+        Task {
+            do {
+                try await viewModel.set()
+            } catch {
+                
+            }
+        }
+    }
 }
 
 struct PubMemoListView_Previews: PreviewProvider {

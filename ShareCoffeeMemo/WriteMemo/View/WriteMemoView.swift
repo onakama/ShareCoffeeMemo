@@ -24,7 +24,8 @@ struct WriteMemoView: View {
                         showingNullAlert = true
                         print("空のまま")
                     } else {
-                        viewModel.makeMemo(taste: tasteViewModel.get(), body: tasteViewModel.get(), roast: roastViewModel.get())
+                        let memo = viewModel.makeMemo(taste: tasteViewModel.get(), body: tasteViewModel.get(), roast: roastViewModel.get())
+                        postMemo(memo: memo)
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }) {
@@ -104,6 +105,15 @@ struct WriteMemoView: View {
         }
         .alert(isPresented: $showingNullAlert) {
             Alert(title: Text("Name,Storeが空です"))
+        }
+    }
+    func postMemo(memo: PubMemoModel) {
+        Task {
+            do {
+                try await viewModel.post(memo: memo)
+            } catch {
+                
+            }
         }
     }
 }

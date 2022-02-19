@@ -16,7 +16,7 @@ struct Inquiry: View {
                 .padding()
 
                 Text("1.Mail")
-                Text(" 　メールはonakama.dev@gmail.com")
+                Text(" 　onakama.dev@gmail.com")
                 Text("2.Twitter")
                 Link("   Twitter(@Dev.onakama)", destination: URL(string: "https://twitter.com/DevOnakama")!)
             }

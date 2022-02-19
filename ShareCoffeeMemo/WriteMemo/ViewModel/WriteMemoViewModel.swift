@@ -10,7 +10,7 @@ class WriteMemoViewModel: ObservableObject {
     @Published var coffeeName = ""
     @Published var saler = ""
     @Published var coffeeReview = ""
-    func makeMemo(taste: Int, body: Int,  roast: Int){
+    func makeMemo(taste: Int, body: Int,  roast: Int) -> PubMemoModel{
         let memo: MemoModel = MemoModel()
         let pubMemo: PubMemoModel = PubMemoModel()
         memo.name = self.coffeeName
@@ -26,22 +26,17 @@ class WriteMemoViewModel: ObservableObject {
         pubMemo.roast = roast
         pubMemo.review = coffeeReview
         write(memo: memo)
-        post(memo: pubMemo)
+        return pubMemo
     }
     func write(memo: MemoModel) {
         MemoListModel.shared.set(memo: memo)
     }
-    func post(memo: PubMemoModel) {
-        DispatchQueue.global().async {
-            let memoModel: PubMemoListModel = PubMemoListModel()
-            memoModel.post(memo: memo, completion: { result in
-                switch result {
-                case .success(let response):
-                    print("HTTP POSTリクエスト：\(response)")
-                case .failure(let error):
-                    print(error)
-                }
-            })
+    func post(memo: PubMemoModel) async throws {
+        let memoModel: PubMemoListModel = PubMemoListModel()
+        do {
+            try await memoModel.httpPOST(memo: memo, url: "https://caffeinecigarettes.com/setreview")
+        } catch {
+            
         }
     }
 }

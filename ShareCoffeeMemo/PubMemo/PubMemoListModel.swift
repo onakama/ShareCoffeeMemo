@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PubMemoListModel {
+class PubMemoListModelzzzzz {
     
     func fetch(completion: @escaping(Result<[PubMemoModel], CoffeeError>) -> Void) {
         let url = URL(string: "https://caffeinecigarettes.com/getreview")!
@@ -67,4 +67,57 @@ class PubMemoListModel {
         }
         return jsonData
     }
+}
+
+class PubMemoListModel {
+    func httpGET(url: String) async throws -> [PubMemoModel]{
+        let url = URL(string: url)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        guard let pubMemoModel = try? jsonDecode(jsonData: data) else {
+            throw CoffeeError.jsonDecodeError
+        }
+        
+        return pubMemoModel
+    }
+    func jsonDecode(jsonData: Data) throws -> [PubMemoModel] {
+        let decoder: JSONDecoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(.iso8601Short)
+        guard let response: Response = try? decoder.decode(Response.self, from: jsonData) else {
+            throw CoffeeError.jsonDecodeError
+        }
+        guard let responseBody = response.body.data(using: .utf8) else {
+            throw CoffeeError.jsonDecodeError
+        }
+        guard let decodedData: [PubMemoModel] = try? decoder.decode([PubMemoModel].self, from: responseBody) else {
+            throw CoffeeError.jsonDecodeError
+        }
+        return decodedData
+    }
+    
+    func httpPOST(memo: PubMemoModel, url: String) async throws {
+        let url = URL(string: url)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        guard let jsonData: Data = try? jsonEncode(memo: memo) else {
+            throw CoffeeError.jsonEncodeError
+        }
+        request.httpBody = jsonData
+        let (_, response) = try await URLSession.shared.data(for: request)
+        if let response = response as? HTTPURLResponse {
+            print("response.statusCode = \(response.statusCode)")
+            throw CoffeeError.coffeeAPIError
+        }
+    }
+    func jsonEncode(memo: PubMemoModel)throws -> Data{
+        let encoder: JSONEncoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .formatted(.iso8601Short)
+        guard let jsonData: Data = try? encoder.encode(memo) else {
+            throw CoffeeError.jsonEncodeError
+        }
+        return jsonData
+    }
+
 }
