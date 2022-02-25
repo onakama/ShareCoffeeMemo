@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5C28EA96274A132400CFB6F3 /* CoffeeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C28EA95274A132400CFB6F3 /* CoffeeError.swift */; };
+		5CA1F9FF27C7BDD600DFA1AD /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA1F9FE27C7BDD600DFA1AD /* ImageModel.swift */; };
+		5CA1FA0127C7C16F00DFA1AD /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA1FA0027C7C16F00DFA1AD /* ImagePicker.swift */; };
 		6A1DA75B272CD37600E19608 /* PubMemoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DA75A272CD37600E19608 /* PubMemoListModel.swift */; };
 		6A1DA75D272CD7FC00E19608 /* PubMemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1DA75C272CD7FC00E19608 /* PubMemoListViewModel.swift */; };
 		6A2B8A902727054A00905667 /* ShareCoffeeMemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2B8A8F2727054A00905667 /* ShareCoffeeMemoApp.swift */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		5C28EA95274A132400CFB6F3 /* CoffeeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeError.swift; sourceTree = "<group>"; };
+		5CA1F9FE27C7BDD600DFA1AD /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		5CA1FA0027C7C16F00DFA1AD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6A1DA75A272CD37600E19608 /* PubMemoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubMemoListModel.swift; sourceTree = "<group>"; };
 		6A1DA75C272CD7FC00E19608 /* PubMemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubMemoListViewModel.swift; sourceTree = "<group>"; };
 		6A2B8A8C2727054A00905667 /* ShareCoffeeMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareCoffeeMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,7 @@
 			children = (
 				6A46C32C2727098B002A0856 /* MomoListModel.swift */,
 				6A46C32E272709C3002A0856 /* MomoModel.swift */,
+				5CA1F9FE27C7BDD600DFA1AD /* ImageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				6A46C34827270D23002A0856 /* WriteMemoView.swift */,
+				5CA1FA0027C7C16F00DFA1AD /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,12 +368,14 @@
 				6A46C33527270A7F002A0856 /* MemoView.swift in Sources */,
 				6A46C34327270C9B002A0856 /* StarViewModel.swift in Sources */,
 				6A2B8A922727054A00905667 /* ContentView.swift in Sources */,
+				5CA1FA0127C7C16F00DFA1AD /* ImagePicker.swift in Sources */,
 				6A1DA75D272CD7FC00E19608 /* PubMemoListViewModel.swift in Sources */,
 				6A46C35027270E16002A0856 /* Inquiry.swift in Sources */,
 				6A46C33727270ADC002A0856 /* MemoListView.swift in Sources */,
 				6A46C34927270D23002A0856 /* WriteMemoView.swift in Sources */,
 				6A2B8A902727054A00905667 /* ShareCoffeeMemoApp.swift in Sources */,
 				6A46C33327270A52002A0856 /* MemoListViewModel.swift in Sources */,
+				5CA1F9FF27C7BDD600DFA1AD /* ImageModel.swift in Sources */,
 				5C28EA96274A132400CFB6F3 /* CoffeeError.swift in Sources */,
 				6A1DA75B272CD37600E19608 /* PubMemoListModel.swift in Sources */,
 				6A46C34E27270DDF002A0856 /* PrivacyPolicy.swift in Sources */,

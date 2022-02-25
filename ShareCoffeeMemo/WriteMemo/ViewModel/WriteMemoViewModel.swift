@@ -25,7 +25,6 @@ class WriteMemoViewModel: ObservableObject {
         pubMemo.body = body
         pubMemo.roast = roast
         pubMemo.review = coffeeReview
-        write(memo: memo)
         return pubMemo
     }
     func write(memo: MemoModel) {

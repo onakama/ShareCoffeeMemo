@@ -15,10 +15,14 @@ struct DeteilMemoView: View {
     }
     var body: some View {
         VStack {
+            Image("testImage")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 300.0, height: 200.0)
             GeometryReader { geometry in
                 VStack {
                     MemoView(memo: viewModel.memo)
-                        .padding(.top, 80)
+                        //.padding(.top, 80)
                         .frame(width: geometry.size.width / 1.1)
                     HStack {
                         Text("Memo")

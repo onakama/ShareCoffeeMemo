@@ -13,8 +13,8 @@ struct WriteMemoView: View {
     @StateObject var tasteViewModel: StarViewModel = StarViewModel()
     @StateObject var bodyViewModel: StarViewModel = StarViewModel()
     @StateObject var roastViewModel: StarViewModel = StarViewModel()
-    @FocusState var isCoffeeNameFocused: Bool
     @State private var showingNullAlert = false
+
     var body: some View {
         VStack{
             HStack{
@@ -25,6 +25,7 @@ struct WriteMemoView: View {
                         print("空のまま")
                     } else {
                         let memo = viewModel.makeMemo(taste: tasteViewModel.get(), body: tasteViewModel.get(), roast: roastViewModel.get())
+                        
                         postMemo(memo: memo)
                         self.presentationMode.wrappedValue.dismiss()
                     }
@@ -35,11 +36,10 @@ struct WriteMemoView: View {
                         .padding(.top, 50)
                 }
             }
-            
+
             TextField("  Name", text: $viewModel.coffeeName)
                 .font(.title)
                 .padding(.leading)
-                .focused($isCoffeeNameFocused)
                 .keyboardType(.default)
             Divider()
                 .background(Color("TextFrame"))
@@ -101,18 +101,31 @@ struct WriteMemoView: View {
                 .frame(height: 200)
                 .border(Color("TextFrame"), width: 0.5)
                 .padding()
+//                .focused($focusState, equals: .review)
+                .keyboardType(.default)
                 .foregroundColor(.gray)
         }
+//        .toolbar {
+//            ToolbarItem(placement: .keyboard) {
+//                HStack{
+//                    Spacer()
+//                    Button("Close"){
+//                        focusState = nil
+//                    }
+//                }
+//            }
+//        }
         .alert(isPresented: $showingNullAlert) {
             Alert(title: Text("Name,Storeが空です"))
         }
     }
+        
     func postMemo(memo: PubMemoModel) {
         Task {
             do {
                 try await viewModel.post(memo: memo)
             } catch {
-                
+
             }
         }
     }
