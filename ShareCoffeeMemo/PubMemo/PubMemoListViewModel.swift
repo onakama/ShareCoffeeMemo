@@ -8,7 +8,7 @@
 import Foundation
 
 actor PubMemoListViewModel: ObservableObject {
-    @MainActor @Published var memoList: [PubMemoModel] = []
+    @MainActor @Published var memoList: [MemoModel] = []
     var memoListModel: PubMemoListModel = PubMemoListModel()
     func set() async throws {
         do {

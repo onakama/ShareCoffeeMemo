@@ -15,14 +15,24 @@ struct DeteilMemoView: View {
     }
     var body: some View {
         VStack {
-            Image("testImage")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 300.0, height: 200.0)
+//            if viewModel.image != nil {
+//                Image(uiImage: viewModel.image!)
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 300.0, height: 200.0)
+//            } else { }
+            AsyncImage(url: URL(string: "https://caffeinecigarettes.com/getimage")) { phase in
+                if let image = phase.image {
+                    image.resizable().scaledToFit()
+                } else if let error = phase.error {
+                    Text(error.localizedDescription)
+                } else {
+                    ProgressView()
+                }
+            }
             GeometryReader { geometry in
                 VStack {
                     MemoView(memo: viewModel.memo)
-                        //.padding(.top, 80)
                         .frame(width: geometry.size.width / 1.1)
                     HStack {
                         Text("Memo")

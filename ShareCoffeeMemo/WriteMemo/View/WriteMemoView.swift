@@ -14,6 +14,7 @@ struct WriteMemoView: View {
     @StateObject var bodyViewModel: StarViewModel = StarViewModel()
     @StateObject var roastViewModel: StarViewModel = StarViewModel()
     @State private var showingNullAlert = false
+    @State var showingImagePicker = false
 
     var body: some View {
         VStack{
@@ -25,15 +26,15 @@ struct WriteMemoView: View {
                         print("空のまま")
                     } else {
                         let memo = viewModel.makeMemo(taste: tasteViewModel.get(), body: tasteViewModel.get(), roast: roastViewModel.get())
-                        
-                        postMemo(memo: memo)
+                        writePostMemo(memo: memo)
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }) {
-                    Text("+")
+                    Image(systemName: "plus.square")
                         .font(.title)
                         .padding(.trailing)
                         .padding(.top, 50)
+                        .foregroundColor(Color("TextColor"))
                 }
             }
 
@@ -97,30 +98,41 @@ struct WriteMemoView: View {
                 }
                 }
             .padding(.bottom)
+            Button(action: {
+                print("押した")
+                showingImagePicker = true
+            }){
+                if viewModel.photo == nil {
+                    HStack {
+                        Text("Photo")
+                        Image(systemName: "photo")
+                    }
+                    .font(.title)
+                    .foregroundColor(.gray)
+                    .border(Color("TextFrame"), width: 0.5)
+                } else {
+                    Image(uiImage: viewModel.photo!)
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                }
+            }
             TextEditor(text: self.$viewModel.coffeeReview)
                 .frame(height: 200)
                 .border(Color("TextFrame"), width: 0.5)
                 .padding()
-//                .focused($focusState, equals: .review)
                 .keyboardType(.default)
                 .foregroundColor(.gray)
         }
-//        .toolbar {
-//            ToolbarItem(placement: .keyboard) {
-//                HStack{
-//                    Spacer()
-//                    Button("Close"){
-//                        focusState = nil
-//                    }
-//                }
-//            }
-//        }
         .alert(isPresented: $showingNullAlert) {
             Alert(title: Text("Name,Storeが空です"))
         }
+        .sheet(isPresented: $showingImagePicker) {
+            ImagePicker(sourceType: .photoLibrary, selectedImage: $viewModel.photo)
+        }
     }
         
-    func postMemo(memo: PubMemoModel) {
+    func writePostMemo(memo: MemoModel) {
+        viewModel.write(memo: memo)
         Task {
             do {
                 try await viewModel.post(memo: memo)

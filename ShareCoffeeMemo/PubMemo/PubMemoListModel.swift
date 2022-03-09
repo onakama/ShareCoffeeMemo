@@ -70,19 +70,19 @@ import Foundation
 //}
 
 class PubMemoListModel {
-    func httpGET(url: String) async throws -> [PubMemoModel]{
+    func httpGET(url: String) async throws -> [MemoModel]{
         let url = URL(string: url)!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
         let (data, _) = try await URLSession.shared.data(for: request)
-        guard let pubMemoModel = try? jsonDecode(jsonData: data) else {
+        guard let memoModel = try? jsonDecode(jsonData: data) else {
             throw CoffeeError.jsonDecodeError
         }
         
-        return pubMemoModel
+        return memoModel
     }
-    func jsonDecode(jsonData: Data) throws -> [PubMemoModel] {
+    func jsonDecode(jsonData: Data) throws -> [MemoModel] {
         let decoder: JSONDecoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(.iso8601Short)
         guard let response: Response = try? decoder.decode(Response.self, from: jsonData) else {
@@ -91,13 +91,13 @@ class PubMemoListModel {
         guard let responseBody = response.body.data(using: .utf8) else {
             throw CoffeeError.jsonDecodeError
         }
-        guard let decodedData: [PubMemoModel] = try? decoder.decode([PubMemoModel].self, from: responseBody) else {
+        guard let decodedData: [MemoModel] = try? decoder.decode([MemoModel].self, from: responseBody) else {
             throw CoffeeError.jsonDecodeError
         }
         return decodedData
     }
     
-    func httpPOST(memo: PubMemoModel, url: String) async throws {
+    func httpPOST(memo: MemoModel, url: String) async throws {
         let url = URL(string: url)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -111,7 +111,7 @@ class PubMemoListModel {
             throw CoffeeError.coffeeAPIError
         }
     }
-    func jsonEncode(memo: PubMemoModel)throws -> Data{
+    func jsonEncode(memo: MemoModel)throws -> Data{
         let encoder: JSONEncoder = JSONEncoder()
         encoder.dateEncodingStrategy = .formatted(.iso8601Short)
         guard let jsonData: Data = try? encoder.encode(memo) else {

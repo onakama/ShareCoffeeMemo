@@ -15,9 +15,20 @@ class ImageModel {
         return documentsURL
     }
     
+    func stringDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMddHHmmss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+        let str = dateFormatter.string(from: date)
+        print(str)
+        return str
+    }
+    
     // ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
-    func fileInDocumentsDirectory(filename: String) -> String {
-        let fileURL = getDocumentsURL().appendingPathComponent(filename)
+    func fileInDocumentsDirectory(date: Date) -> String {
+        let strName = stringDate(date: date)
+        let fileURL = getDocumentsURL().appendingPathComponent(strName)
         return fileURL!.path
     }
     

@@ -12,7 +12,7 @@ struct PubMemoListView: View {
     @State private var showingWriteMemo = false
     @State var searchTextEntered: String = ""
     @StateObject var viewModel = PubMemoListViewModel()
-    @State var isInformation = false
+    @State var isInfomation = false
     var body: some View {
         NavigationView {
             List {
@@ -32,29 +32,17 @@ struct PubMemoListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        self.showingWriteMemo = true
-                    }) {
-                        Text("+")
-                            .font(.title)
-                    }
+                    WriteMemoButtonView()
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination: Information(), isActive: $isInformation) {
-                        Image("gear")
-                            .resizable()
-                            .frame(width: 25, height: 25)
+                    NavigationLink(destination: Information(), isActive: $isInfomation) {
+                        InformationButtonView()
                     }
                 }
                 
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: $showingWriteMemo, onDismiss: {
-            setMemo()
-        }) {
-            WriteMemoView()
-        }
         .onAppear() { setMemo() }
     }
     func setMemo() {

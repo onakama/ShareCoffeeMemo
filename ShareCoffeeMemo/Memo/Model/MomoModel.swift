@@ -49,16 +49,16 @@ class MemoModel: Object, MemoProtocol, Identifiable, Codable {
         return "id"
     }
 }
-
-class PubMemoModel: Codable, MemoProtocol, Identifiable {
-    var id: Int = 0
-    var name: String = ""
-    var saler: String = ""
-    var taste: Int = 0
-    var body: Int = 0
-    var roast: Int = 0
-    var review: String = ""
-    var date: Date = Date()
-}
-
+//
+//class PubMemoModel: Codable, MemoProtocol, Identifiable {
+//    var id: Int = 0
+//    var name: String = ""
+//    var saler: String = ""
+//    var taste: Int = 0
+//    var body: Int = 0
+//    var roast: Int = 0
+//    var review: String = ""
+//    var date: Date = Date()
+//}
+//
 

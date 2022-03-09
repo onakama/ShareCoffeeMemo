@@ -30,29 +30,17 @@ struct MemoListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        self.showingWriteMemo = true
-                    }) {
-                        Text("+")
-                            .font(.title)
-                    }
+                    WriteMemoButtonView()
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationLink(destination: Information(), isActive: $isInfomation) {
-                        Image("gear")
-                            .resizable()
-                            .frame(width: 25, height: 25)
+                        InformationButtonView()
                     }
                 }
                 
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: $showingWriteMemo, onDismiss: {
-            viewModel.set()
-        }) {
-            WriteMemoView()
-        }
     }
     var searchResults: [MemoModel] {
             if searchTextEntered.isEmpty {
