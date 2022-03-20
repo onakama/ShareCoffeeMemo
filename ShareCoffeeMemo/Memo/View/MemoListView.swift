@@ -13,6 +13,7 @@ struct MemoListView: View {
     @State var searchTextEntered: String = ""
     @StateObject var viewModel = MemoListViewModel()
     @State var isInfomation = false
+    
     var body: some View {
         NavigationView {
             List {

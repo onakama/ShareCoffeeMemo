@@ -15,23 +15,9 @@ struct DeteilMemoView: View {
     }
     var body: some View {
         VStack {
-//            if viewModel.image != nil {
-//                Image(uiImage: viewModel.image!)
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(width: 300.0, height: 200.0)
-//            } else { }
-            AsyncImage(url: URL(string: "https://caffeinecigarettes.com/getimage")) { phase in
-                if let image = phase.image {
-                    image.resizable().scaledToFit()
-                } else if let error = phase.error {
-                    Text(error.localizedDescription)
-                } else {
-                    ProgressView()
-                }
-            }
             GeometryReader { geometry in
                 VStack {
+                    MemoImageView(date: viewModel.memo.date, localFlg: viewModel.localFlg)
                     MemoView(memo: viewModel.memo)
                         .frame(width: geometry.size.width / 1.1)
                     HStack {
@@ -42,9 +28,9 @@ struct DeteilMemoView: View {
                         Button(action: {
                             viewModel.updateReview()
                         }) {
-                            Text("+")
+                            Text("Edit")
                                 .padding(.trailing, 50)
-                                .font(.title)
+                                .font(.body)
                                 .foregroundColor(buttonColor)
                         }
                     }

@@ -12,6 +12,7 @@ struct MemoView: View {
     init(memo: MemoProtocol){
         self.viewModel = MemoViewModel(memo: memo)
     }
+    
     var body: some View {
         VStack{
             HStack{

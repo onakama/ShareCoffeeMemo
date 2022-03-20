@@ -13,6 +13,7 @@ struct PubMemoListView: View {
     @State var searchTextEntered: String = ""
     @StateObject var viewModel = PubMemoListViewModel()
     @State var isInfomation = false
+    
     var body: some View {
         NavigationView {
             List {
