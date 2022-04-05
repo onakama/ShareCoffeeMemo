@@ -241,8 +241,8 @@
 		6A46C34127270C6B002A0856 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6A46C34827270D23002A0856 /* WriteMemoView.swift */,
 				5CF4675F27D91CC700081E4A /* WriteMemoButtonView.swift */,
+				6A46C34827270D23002A0856 /* WriteMemoView.swift */,
 				5CA1FA0027C7C16F00DFA1AD /* ImagePicker.swift */,
 			);
 			path = View;

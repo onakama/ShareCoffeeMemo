@@ -15,7 +15,7 @@ struct MemoImageView: View {
     var body: some View {
         VStack {
             if viewModel.localFlg == false {
-                AsyncImage(url: URL(string: "https://caffeinecigarettes.com/getimage?filename=zoro.png")) { phase in
+                AsyncImage(url: URL(string: "https://caffeinecigarettes.com/getimage?filename=\(viewModel.getImageName())")) { phase in
                     if let image = phase.image {
                         image.resizable().scaledToFit()
                     } else {

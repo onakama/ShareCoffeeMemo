@@ -20,13 +20,19 @@ class MemoImageViewModel: ObservableObject {
         getImage()
     }
     
-    func getImageName() -> String {
+    func getImagePath() -> String {
         let filePath = imageModel.fileInDocumentsDirectory(date: date)
         return filePath
     }
+    
+    func getImageName() -> String{
+        let imageName = "\(imageModel.stringDate(date: date)).png"
+        return imageName
+    }
+    
     func getImage() {
         if localFlg == true {
-            let filePath = getImageName()
+            let filePath = getImagePath()
             let image = imageModel.loadImage(path: filePath)
             self.image = image == nil ? nil : Image(uiImage: image!)
             print(filePath)

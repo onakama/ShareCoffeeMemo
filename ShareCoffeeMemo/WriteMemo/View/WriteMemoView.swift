@@ -26,7 +26,7 @@ struct WriteMemoView: View {
                         print("空のまま")
                     } else {
                         let memo = viewModel.makeMemo(taste: tasteViewModel.get(), body: tasteViewModel.get(), roast: roastViewModel.get())
-                        writePostMemo(memo: memo)
+                        saveMemo(memo: memo)
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }) {
@@ -131,7 +131,7 @@ struct WriteMemoView: View {
         }
     }
         
-    func writePostMemo(memo: MemoModel) {
+    func saveMemo(memo: MemoModel) {
         viewModel.write(memo: memo)
         Task {
             do {
